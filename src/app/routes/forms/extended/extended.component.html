@@ -1,0 +1,206 @@
+<div class="content-heading">
+    <div>
+        Form Extended
+        <small>Native ng2 elements to extend the form functions</small>
+    </div>
+</div>
+<!-- START card-->
+<div class="card card-default">
+    <div class="card-header">Form elements</div>
+    <div class="card-body">
+        <form class="form-horizontal" method="get">
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">Custom Switch</label>
+                    <div class="col-lg-4 col-md-10">
+                        <div class="d-flex align-items-center mb-3">
+                            <div>Switch Small</div>
+                            <div class="ml-auto">
+                                <label class="switch switch-sm m-0">
+                                    <input type="checkbox" checked="checked" />
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div>Switch</div>
+                            <div class="ml-auto">
+                                <label class="switch m-0">
+                                    <input type="checkbox" checked="checked" />
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div>Switch Large</div>
+                            <div class="ml-auto">
+                                <label class="switch switch-lg m-0">
+                                    <input type="checkbox" checked="checked" />
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div>Switch Radio</div>
+                            <div class="ml-auto d-flex">
+                                <label class="switch switch-lg m-0 mr-2">
+                                    <input type="radio" checked="checked" name="radioSwitch" />
+                                    <span></span>
+                                </label>
+                                <label class="switch switch-lg m-0">
+                                    <input type="radio" name="radioSwitch" />
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group row mb">
+                    <label class="col-md-2 col-form-label">Color pickers</label>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card card-default">
+                                    <div class="card-header">Input</div>
+                                    <div class="card-body">
+                                        <label for="" [style.color]="colorDemo1">Show me color</label>
+                                        <input class="form-control" [(colorPicker)]="colorDemo1" [value]="colorDemo1" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-default">
+                                    <div class="card-header">Html element:</div>
+                                    <div class="card-body">
+                                        <div class="h1 clickable mt-lg" [(colorPicker)]="colorDemo2" [cpPosition]="'bottom'" [style.color]="colorDemo2" [cpPositionOffset]="'50%'" [cpPositionRelativeToArrow]="true">Change me!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card card-default">
+                                    <div class="card-header">Cancel button</div>
+                                    <div class="card-body">
+                                        <input class="form-control" [(colorPicker)]="colorDemo3" [value]="colorDemo3" [cpCancelButton]="true" [cpHeight]="'310px'" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-default">
+                                    <div class="card-header">Output format</div>
+                                    <div class="card-body">
+                                        <input class="form-control" [(colorPicker)]="colorDemo4" [value]="colorDemo4" [cpOutputFormat]="'rgba'" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group row mb">
+                    <label class="col-md-2 col-form-label">Datepicker</label>
+                    <div class="col-md-6">
+                        <p>Basic</p>
+                        <input type="text" class="form-control" #dp="bsDatepicker" bsDatepicker [bsValue]="bsValue" name="dp-basic" [bsConfig]="bsConfig">
+                        <p class="mt-3">Range</p>
+                        <input class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [bsConfig]="bsConfig">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group row mb">
+                    <label class="col-md-2 col-form-label">Timepicker</label>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <p>Bassic</p>
+                                <timepicker [(ngModel)]="mytime" name="timepicker"></timepicker>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <p>Mouse wheel (focus and scroll)</p>
+                                <timepicker [(ngModel)]="mytime" [mousewheel]="true" name="timepicker-wheel"></timepicker>
+                            </div>
+                        </div>
+                        <p>Time is: {{mytime}}</p>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="form-group row mb">
+                    <label class="col-md-2 col-form-label">ngSelect2</label>
+                    <div class="col-md-6">
+                        <label class="mt">Single Select</label>
+                        <ngx-select [allowClear]="true" [items]="items" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" (typed)="typed($event)" placeholder="No city selected">
+                        </ngx-select>
+                        <label class="mt">Multiple</label>
+                        <ngx-select (data)="value" [multiple]="true" [items]="items" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" placeholder="No city selected"></ngx-select>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">
+                       Masked input
+                       <div class="text-sm text-muted">
+                           Based on <a target="_blank" href="https://github.com/uNmAnNeR/imaskjs/tree/master/packages/angular-imask">imaskjs</a>
+                       </div>
+                    </label>
+                    <div class="col-md-6">
+                        <label class="mt-2">
+                            Using
+                            <code>NgModel</code>
+                        </label>
+                        <input id="1" name="phone" [(ngModel)]="myModel" [imask]="{mask: mask}" type="text" class="form-control" />
+
+                        <div>Model value: {{myModel || "[empty]"}}</div>
+                        <label class="mt-2">
+                            Using
+                            <code>NgModel</code> with initial value
+                        </label>
+                        <input id="2" name="phoneWithValue" [(ngModel)]="modelWithValue" [imask]="{mask: mask}" type="text" class="form-control" />
+                        <div>Model value: {{modelWithValue || "[empty]"}}</div>
+                        <label class="mt-2">
+                            Using
+                            <code>FormControl</code> with initial value
+                        </label>
+                        <input id="3" name="phoneFormControl" [formControl]='formControlInput' [imask]="{mask: mask}" type="text" class="form-control" />
+                        <div>Model value: {{formControlInput.value || "[empty]"}}</div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">Block Note Editor
+                        <div class="text-sm text-muted">Based on textarea</div>
+                    </label>
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="card-body mh0">
+                                <textarea class="form-control note-editor" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <p>With margin</p>
+                        <div class="card">
+                            <div class="card-body mh0">
+                                <textarea class="form-control note-editor note-editor-margin" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Buttons -->
+            <fieldset>
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-secondary" type="submit">Cancel</button>
+                    <button class="btn btn-primary" type="submit">Save changes</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!-- END card-->

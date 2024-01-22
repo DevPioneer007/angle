@@ -1,0 +1,66 @@
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+@import '../../../shared/styles/bootstrap/_functions';
+@import '../../../shared/styles/bootstrap/_variables';
+@import '../../../shared/styles/app/variables';
+
+.ngx-datatable.bootstrap {
+    background-color: transparent;
+    box-shadow: 0 0 0 #000;
+}
+
+.ngx-datatable.scroll-vertical {
+    height: 300px;
+}
+
+// workaround for use of detail rows
+// with other table in the same page
+.no-detail-row .datatable-row-detail {
+    display: none !important;
+}
+
+// change color of active cells selected
+.ngx-datatable.bootstrap.single-selection .datatable-body-row.active, .ngx-datatable.bootstrap.single-selection .datatable-body-row.active .datatable-row-group, .ngx-datatable.bootstrap.multi-selection .datatable-body-row.active, .ngx-datatable.bootstrap.multi-selection .datatable-body-row.active .datatable-row-group, .ngx-datatable.bootstrap.multi-click-selection .datatable-body-row.active, .ngx-datatable.bootstrap.multi-click-selection .datatable-body-row.active .datatable-row-group,
+.ngx-datatable.bootstrap.single-selection .datatable-body-row.active:hover, .ngx-datatable.bootstrap.single-selection .datatable-body-row.active:hover .datatable-row-group, .ngx-datatable.bootstrap.multi-selection .datatable-body-row.active:hover, .ngx-datatable.bootstrap.multi-selection .datatable-body-row.active:hover .datatable-row-group, .ngx-datatable.bootstrap.multi-click-selection .datatable-body-row.active:hover, .ngx-datatable.bootstrap.multi-click-selection .datatable-body-row.active:hover .datatable-row-group {
+    background-color: $primary !important;
+    .datatable-body-cell {
+        color: #fff;
+    }
+}
+// remove link decoration
+.datatable-icon-right {
+    text-decoration: none !important;
+}
+// align table with no data legend
+.ngx-datatable.bootstrap .empty-row {
+    text-align: center;
+    margin-top: 20px;
+}
+// tabele footer
+.ngx-datatable.bootstrap .datatable-footer {
+    background-color: transparent;
+    color: $body-color;
+}
+// table pagination
+
+.ngx-datatable.bootstrap .datatable-footer .datatable-pager a {
+    color: $pagination-color;
+}
+.pager li > a, .pager li > span {
+    border-color: $pagination-border-color;
+}
+.ngx-datatable.bootstrap .datatable-footer .datatable-pager ul li:not(.disabled).active a, .ngx-datatable.bootstrap .datatable-footer .datatable-pager ul li:not(.disabled):hover a {
+    background-color: $primary;
+    border-color: $primary;
+    color: #fff;
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row {
+    border: 0;
+}
+
+.ngx-datatable.bootstrap .datatable-body .datatable-body-row.datatable-row-even {
+    background-color: rgba(0, 0, 0, 0.025);
+}

@@ -1,0 +1,87 @@
+<div class="content-heading">
+    <div>
+        Full Calendar
+        <small>Drag and Drop events and tasks</small>
+    </div>
+    <div class="ml-auto">
+        <button type="button" class="btn btn-info btn-bloc" (click)="addRandomEvent()">Add random event</button>
+    </div>
+</div>
+<!-- START row-->
+<div class="calendar-app">
+    <div class="row">
+        <div class="col-xl-3 col-lg-4">
+            <div class="row">
+                <div class="col-lg-12 col-md-6 col-12">
+                    <!-- START card-->
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h4 class="card-title">Draggable Events</h4>
+                        </div><!-- Default external events list-->
+                        <div class="card-body">
+                            <div class="external-events" #externalEventsList>
+                                <div *ngFor="let ev of externalEvents" [ngClass]="'fce-event bg-' + ev.color">{{ev.name}}</div>
+                            </div>
+                            <div class="custom-control custom-checkbox mt-3">
+                                <input class="custom-control-input" id="drop-remove" type="checkbox" [(ngModel)]="evRemoveOnDrop">
+                                <label class="custom-control-label" for="drop-remove">Remove after Drop</label>
+                            </div>
+                        </div>
+                    </div><!-- END card-->
+                </div>
+                <div class="col-lg-12 col-md-6 col-12">
+                    <!-- START card-->
+                    <div class="card card-default">
+                        <div class="card-header">
+                            <h3 class="card-title">Create Event</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group mb-2">
+                                <input class="form-control" [(ngModel)]="evNewName" type="text" placeholder="Event name...">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-secondary" (click)="addNewExternalEvent()" type="button">Add</button>
+                                </div>
+                            </div>
+                            <p class="text-muted"><small>Choose a Color</small></p>
+                            <ul class="list-inline" id="external-event-color-selector">
+                                <li *ngFor="let evc of evColors" class="list-inline-item p-0">
+                                    <div class="circle circle-xl" [ngClass]="getEvColorClasses(evc)"
+                                    (click)="evSelectedColor = evc"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- END card-->
+                </div>
+            </div>
+            <div class="mb-3">
+                <div *ngIf="selectedEvent">
+                    <p>Selected:</p>
+                    <div class="box-placeholder">{{selectedEvent | json}}</div>
+                </div>
+                <div *ngIf="!selectedEvent">
+                    <p>Click calendar to show information</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-8">
+            <div class="card card-default">
+                <div class="card-body">
+                    <!-- START calendar-->
+                    <full-calendar
+                        defaultView="dayGridMonth"
+                        [plugins]="calendarPlugins"
+                        [events]="calendarEvents"
+                        themeSystem="bootstrap"
+                        [header]="calendarHeader"
+                        [editable]="true"
+                        [droppable]="true"
+                        [deepChangeDetection]="true"
+                        (dateClick)="dayClick($event)"
+                        (eventReceive)="handleEventReceive($event)"
+                        >
+                    </full-calendar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

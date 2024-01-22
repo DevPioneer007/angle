@@ -1,0 +1,108 @@
+<!-- START action buttons-->
+<div class="d-flex mb-2">
+    <div class="btn-group">
+        <button class="btn btn-secondary btn-sm" type="button">
+            <em class="fas fa-reply text-gray-dark"></em>
+        </button>
+        <button class="btn btn-secondary btn-sm" type="button">
+            <em class="fas fa-reply-all text-gray-dark"></em>
+        </button>
+        <button class="btn btn-secondary btn-sm" type="button">
+            <em class="fas fa-share text-gray-dark"></em>
+        </button>
+    </div>
+    <div class="btn-group" dropdown>
+        <button class="btn btn-secondary btn-sm" dropdownToggle>
+            <span class="dropdown-label" style="width: 70px">
+                <em class="far fa-folder-open"></em>
+            </span>
+        </button>
+        <ul *dropdownMenu class="dropdown-menu">
+            <a class="dropdown-item" href="#">
+                <em class="fa fa-inbox fa-fw"></em>Meetings
+                <span class="badge badge-danger float-right">6</span>
+            </a>
+            <a class="dropdown-item" href="#">
+                <em class="far fa-file-alt fa-fw"></em>CSS
+                <span class="badge badge-info float-right inbox-notification">10</span>
+            </a>
+            <a class="dropdown-item" href="#">
+                <em class="far fa-envelope fa-fw"></em>Pending</a>
+            <a class="dropdown-item" href="#">
+                <em class="fa fa-certificate fa-fw"></em>Angular</a>
+        </ul>
+    </div>
+    <div class="btn-group" dropdown>
+        <button class="btn btn-secondary btn-sm" dropdownToggle>
+            <span class="dropdown-label">More</span>
+            <span class="caret"></span>
+        </button>
+        <ul *dropdownMenu class="dropdown-menu">
+            <a class="dropdown-item" href="#">Mark as Read</a>
+            <a class="dropdown-item" href="#">Mark as Unread</a>
+            <a class="dropdown-item" href="#">Filter Messages like these</a>
+            <a class="dropdown-item" href="#">Mute</a>
+        </ul>
+    </div>
+    <div class="btn-group ml-auto">
+        <button class="btn btn-sm btn-secondary" type="button">
+            <em class="fa fa-archive"></em>
+        </button>
+        <button class="btn btn-secondary btn-sm" type="button">
+            <em class="fa fa-exclamation text-gray-dark"></em>
+        </button>
+        <button class="btn btn-secondary btn-sm" type="button">
+            <em class="fa fa-times text-gray-dark"></em>
+        </button>
+    </div>
+</div>
+<!-- END action buttons-->
+<div class="card card-default">
+    <div class="card-body">
+        <table class="table mb-mails mb-view">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="d-flex">
+                            <img class="mb-mail-avatar" [src]="mail.from?.avatar||''" alt="Mail Avatar" />
+                            <div>
+                                <span>From:</span>
+                                <span class="mb-mail-from">{{mail.from?.name}} &lt;{{mail.from?.email}}&gt;</span>
+                                <p class="mb-mail-to-list">To:
+                                    <a href="#" title="mailto: {{to.email}}" *ngFor="let to of mail.to">{{to.name}}</a>
+                                </p>
+                            </div>
+                            <div class="mb-mail-date ml-auto">{{mail.date}}</div>
+                        </div>
+                        <div class="mb-mail-preview mt-3">
+                            <h4>{{mail.subject}}</h4>
+                            <div [innerHTML]="mail.content"></div>
+                        </div>
+                        <div class="mb-attachment" *ngIf="mail.attach?.length">
+                            <p>
+                                <span>
+                                    <em class="fa fa-paperclip fa-fw"></em>{{mail.attach?.length}} attachments —</span>
+                                <a class="mr-2 br pr-2" href="#"> Download all attachments</a>
+                                <a href="#">View all images</a>
+                            </p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item" *ngFor="let att of mail.attach">
+                                    <a href="{{att.url}}">
+                                        <img class="thumb64 img-fluid img-thumbnail" [src]="att.url||''" />
+                                    </a>
+                                    <p>{{att.name}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="d-flex mt-4">
+                            <a class="mr-2" href="#">
+                                <img class="media-box-object rounded thumb32" alt="" [src]="settings.getUserSetting('picture')||''" />
+                            </a>
+                            <textarea class="form-control" placeholder="Reply here..."></textarea>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

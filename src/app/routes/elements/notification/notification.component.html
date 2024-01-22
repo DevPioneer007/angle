@@ -1,0 +1,283 @@
+<div class="content-heading">
+    <div>
+        Notifications
+        <span class="text-sm d-none d-sm-block">A complete set of notification posibilities</span>
+        <!-- Breadcrumb below title-->
+        <ol class="breadcrumb breadcrumb px-0 pb-0">
+            <li class="breadcrumb-item"><a href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item"><a href="#">Elements</a>
+            </li>
+            <li class="breadcrumb-item active">Notifications</li>
+        </ol>
+    </div>
+    <!-- Breadcrumb right aligned-->
+    <ol class="breadcrumb ml-auto">
+        <li class="breadcrumb-item"><a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item"><a href="#">Elements</a>
+        </li>
+        <li class="breadcrumb-item active">Notifications</li>
+    </ol>
+</div>
+<!-- Breadcrumb next to view title-->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a>
+    </li>
+    <li class="breadcrumb-item"><a href="#">Elements</a>
+    </li>
+    <li class="breadcrumb-item active">Notifications</li>
+</ol>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a>
+    </li>
+    <li class="breadcrumb-item"><a href="#">Elements</a>
+    </li>
+    <li class="breadcrumb-item active">Notifications</li>
+</ol>
+<div class="card card-default">
+    <div class="card-header">Toaster notifications for Angular</div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input class="form-control" type="text" placeholder="Enter a title..." [(ngModel)]="toaster.title" />
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="form-control" placeholder="Enter a message" rows="5" [(ngModel)]="toaster.text"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Toast Type</label>
+                        <div class="c-radio">
+                            <label>
+                                <input type="radio" name="toasts" [(ngModel)]="toaster.type" value="success" />
+                                <span class="fa fa-circle"></span>Success</label>
+                        </div>
+                        <div class="c-radio">
+                            <label>
+                                <input type="radio" name="toasts" [(ngModel)]="toaster.type" value="info" />
+                                <span class="fa fa-circle"></span>Info</label>
+                        </div>
+                        <div class="c-radio">
+                            <label>
+                                <input type="radio" name="toasts" [(ngModel)]="toaster.type" value="warning" />
+                                <span class="fa fa-circle"></span>Warning</label>
+                        </div>
+                        <div class="c-radio">
+                            <label>
+                                <input type="radio" name="toasts" [(ngModel)]="toaster.type" value="error" />
+                                <span class="fa fa-circle"></span>Error</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-info" (click)="pop()">Show a Toaster</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-6">
+        <!-- START card-->
+        <div class="card card-default">
+            <div class="card-header">Alert Styles</div>
+            <div class="card-body">
+                <alert type="success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a class="alert-link" href="#">Alert Link</a>
+                </alert>
+                <alert type="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a class="alert-link" href="#">Alert Link</a>
+                </alert>
+                <div>
+                    <alert *ngFor="let alert of alerts;let i = index" [type]="alert.type" [dismissible]="true" (close)="closeAlert(i)">
+                        {{ alert?.msg }}
+                    </alert>
+                    <button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>
+                </div>
+            </div>
+        </div>
+        <!-- END card-->
+        <!-- START card-->
+        <div class="card card-default">
+            <div class="card-header">Progress Bar
+                <div class="btn-group float-right">
+                    <button type="button" class="btn btn-xs btn-primary" (click)="randomStacked()">Stacked</button>
+                    <button type="button" class="btn btn-xs btn-primary" (click)="random()">Randomize</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="text-bold">Static</p>
+                <div class="row mb-2">
+                    <div class="col-md-4">
+                        <progressbar [value]="55"></progressbar>
+                    </div>
+                    <div class="col-md-4">
+                        <progressbar class="progress-striped" [value]="22" type="warning">22%</progressbar>
+                    </div>
+                    <div class="col-md-4">
+                        <progressbar class="progress-striped active" [max]="200" [value]="166" type="danger"><i>166 / 200</i></progressbar>
+                    </div>
+                </div>
+                <p class="text-bold">Dynamic</p>
+                <progressbar class="mb-2" [max]="max" [value]="dynamic"><span style="color:white; white-space:nowrap;">{{dynamic}} / {{max}}</span>
+                </progressbar>
+                <p class="text-bold">Stacked</p>
+                <progressbar class="progress" [value]="stacked" [max]="100"></progressbar>
+            </div>
+        </div>
+        <!-- END card-->
+    </div>
+    <div class="col-xl-6">
+        <!-- START card-->
+        <div class="card card-default">
+            <div class="card-header">Modals</div>
+            <div class="card-body">
+                <!-- CLassic modal -->
+                <button type="button" class="btn btn-primary mr-1" (click)="classicModal.show()">Classc modal</button>
+                <!-- Small modal -->
+                <button type="button" class="btn btn-primary" (click)="smModal.show()">Small modal</button>
+                <!-- Small modal -->
+                <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Small modal</h4>
+                                <button type="button" class="close" aria-label="Close" (click)="smModal.hide()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Classc modal -->
+                <div class="modal fade" bsModal #classicModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Classic modal</h4>
+                                <button type="button" class="close" aria-label="Close" (click)="classicModal.hide()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END card-->
+        <!-- START card-->
+        <div class="card card-default">
+            <div class="card-header">Ratings</div>
+            <div class="card-body">
+                <h4>Default</h4>
+                <rating [(ngModel)]="rate" [max]="maxRat" [readonly]="isReadonly" (onHover)="hoveringOver($event)" (onLeave)="resetStar()" [titles]="['one','two','three']" stateOn="fa fa-star text-yellow" stateOff="far fa-star"></rating>
+                <span class="label" [ngClass]="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" [ngStyle]="{display: (overStar && !isReadonly) ? 'inline' : 'none'}">{{percent}}%</span>
+                <pre class="card card-block card-header" style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
+                <button type="button" class="btn btn-sm btn-danger" (click)="rate = 0" [disabled]="isReadonly">Clear
+                </button>
+                <button type="button" class="btn btn-sm btn-primary" (click)="isReadonly = ! isReadonly">Toggle Readonly
+                </button>
+                <hr/>
+                <h4>Custom icons</h4>
+                <div>
+                    <rating [max]="10" [(ngModel)]="x" [customTemplate]="t" style="color: #0275d8;font-size: 20px;"></rating>
+                    <b>(<i>Rate:</i> {{x}})</b>
+                    <ng-template #t let-index="index" let-value="value">{{index
+                        < value ? '&#9745;' : '&#9744;'}}</ng-template>
+                </div>
+                <div>
+                    <rating [max]="10" [(ngModel)]="y" [customTemplate]="tt"></rating>
+                    <b>(<i>Rate:</i> {{y}})</b>
+                    <ng-template #tt let-i="index" let-v="value">
+                        <button class="btn btn-{{i < v ? 'warning' : 'default'}}">
+                            {{i
+                            < v ? '&#9733;' : '&#9734;'}} </button>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <!-- END card-->
+    </div>
+</div>
+<div class="card card-default">
+    <div class="card-header">Popovers</div>
+    <div class="card-body">
+        <button type="button" class="btn btn-primary mb-3" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." container="body">
+            Live demo
+        </button>
+        <p class="text-bold">Four directions</p>
+        <button type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top" placement="top" container="body">
+            Popover on top
+        </button>
+        <button type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right" placement="right" container="body">
+            Popover on right
+        </button>
+        <button type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover auto" placement="auto" container="body">
+            Popover auto
+        </button>
+        <button type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on left" placement="left" container="body">
+            Popover on left
+        </button>
+        <button type="button" class="btn btn-default btn-secondary" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on bottom" placement="bottom">
+            Popover on bottom
+        </button>
+    </div>
+</div>
+<!-- START card-->
+<div class="card card-default">
+    <div class="card-header">Tooltips</div>
+    <div class="card-body">
+        <div class="form-group">
+            <label>Dynamic Tooltip Text</label>
+            <input type="text" [(ngModel)]="dynamicTooltipText" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Dynamic Tooltip Popup Text</label>
+            <input type="text" [(ngModel)]="dynamicTooltip" class="form-control">
+        </div>
+        <p>
+            Pellentesque <a href="#" [tooltip]="dynamicTooltip">{{dynamicTooltipText}}</a>, sit amet venenatis urna cursus eget nunc scelerisque viverra mauris, in aliquam. Tincidunt lobortis feugiat vivamus at
+            <a href="#" placement="left" tooltip="On the Left!">left</a> eget arcu dictum varius duis at consectetur lorem. Vitae elementum curabitur
+            <a href="#" placement="right" tooltip="On the Right!">right</a> nunc sed velit dignissim sodales ut eu sem integer vitae. Turpis egestas
+            <a href="#" placement="bottom" tooltip="On the Bottom!">bottom</a> pharetra convallis posuere morbi leo urna,
+            <a href="#" [tooltipAnimation]="false" tooltip="I don't fade. :-(">fading</a> at elementum eu, facilisis sed odio morbi quis commodo odio. In cursus
+            <a href="#" [delay]='1000' tooltip='appears with delay'>delayed</a> turpis massa tincidunt dui ut. nunc sed velit dignissim sodales ut eu sem integer vitae. Turpis egestas
+        </p>
+        <p>
+            I can even contain HTML. <a href="#" [tooltip]="popTemplate" (tooltipStateChanged)="tooltipStateChanged($event)">Check me out!</a>
+            <ng-template #popTemplate><div [innerHtml]="htmlTooltip"></div></ng-template>
+        </p>
+        <ng-template #toolTipTemplate>
+            <h4>Tool tip custom content defined inside a template</h4>
+            <h5>With context binding: {{ttcontent}}</h5>
+        </ng-template>
+        <p>
+            Or use a TemplateRef. <a href="#" [tooltip]="toolTipTemplate">Check me out!</a>
+        </p>
+        <p>
+            Programatically show/hide tooltip
+            <a href="#" [tooltip]="'Foo'" (tooltipStateChanged)="tooltipStateChanged($event)" #tooltip="bs-tooltip">Check me out!</a>
+            <button class="btn btn-sm btn-primary" (click)="tooltip.show()">Show tooltip</button>
+            <button class="btn btn-sm btn-danger" (click)="tooltip.hide()">Hide tooltip</button>
+        </p>
+        <p>
+            I can have a custom class. <a href="#" tooltip="I can have a custom class applied to me!">Check me out!</a>
+        </p>
+        <form role="form">
+            <div class="form-group">
+                <label>Or use custom triggers, like focus: </label>
+                <input type="text" name="clickMe" value="Click me!" tooltip="See? Now click away..." triggers="focus" placement="top" class="form-control" />
+            </div>
+        </form>
+    </div>
+</div>
+<!-- END card-->

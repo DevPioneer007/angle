@@ -1,0 +1,47 @@
+<!-- START Mails-->
+<div class="card card-default">
+    <div class="card-body">
+        <form role="form-horizontal" method="post">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend text-sm">
+                    <span class="input-group-text">To:</span>
+                </div>
+                <input class="form-control" type="text" />
+            </div>
+            <div class="input-group mb-2" *ngIf="showCC">
+                <div class="input-group-prepend text-sm">
+                    <span class="input-group-text">CC:</span>
+                </div>
+                <input class="form-control" type="text" />
+            </div>
+            <div class="input-group mb-2" *ngIf="showBCC">
+                <div class="input-group-prepend text-sm">
+                    <span class="input-group-text">BCC:</span>
+                </div>
+                <input class="form-control" type="text" />
+            </div>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend text-sm">
+                    <span class="input-group-text">Subject:</span>
+                </div>
+                <input class="form-control" type="text" />
+            </div>
+            <div class="mb-editor">
+                <!-- START action buttons-->
+                <div class="btn-group btn-group-sm mb-3">
+                    <div></div>
+                    <div class="ml-auto">
+                        <button class="btn btn-secondary btn-xs" type="button" [ngClass]="{'active':showCC}" (click)="showCC = !showCC" href="#">CC</button>
+                        <button class="btn btn-secondary btn-xs" type="button" [ngClass]="{'active':showBCC}" (click)="showBCC = !showBCC" href="#">BCC</button>
+                    </div>
+                </div>
+                <!-- END action buttons  -->
+                <div id="summernote" class="summernote">
+                    <span>Rich text mail here..</span>
+                </div>
+                <br/>
+                <button class="btn btn-primary btn-sm mb" type="button">Send</button>
+            </div>
+        </form>
+    </div>
+</div>

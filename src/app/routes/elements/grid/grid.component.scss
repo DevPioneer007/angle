@@ -1,0 +1,7 @@
+.grid-example .row>.col,
+.grid-example .row>[class^=col-] {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    background-color: rgba(241, 242, 243, .15);
+    border: 1px dashed rgba(0, 0, 0, .15);
+}

@@ -1,0 +1,106 @@
+<div class="content-heading">Sortable</div>
+<h4>Simple sortable</h4>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                Favorite drinks
+            </div>
+            <div class="card-body">
+                <ul class="list-group" dnd-sortable-container [sortableData]="listOne">
+                    <li *ngFor="let item of listOne; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card card-default">
+            <div class="card-body">
+                My prefences:
+                <br/>
+                <span *ngFor="let item of listOne; let i = index">{{i + 1}}) {{item}}<br/></span>
+            </div>
+        </div>
+    </div>
+</div>
+<h4>Multi list sortable</h4>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card card-warning">
+            <div class="card-header">
+                Available boxers
+            </div>
+            <div class="card-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listBoxers">
+                <ul class="list-group">
+                    <li *ngFor="let item of listBoxers; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                First Team
+            </div>
+            <div class="card-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listTeamOne">
+                <ul class="list-group">
+                    <li *ngFor="let item of listTeamOne; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                Second Team
+            </div>
+            <div class="card-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listTeamTwo">
+                <ul class="list-group">
+                    <li *ngFor="let item of listTeamTwo; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <h4>
+        Drag-and-Drop - Shopping basket
+    </h4>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">Available products</div>
+                <div class="card-body">
+                    <div *ngFor="let product of availableProducts" class="card card-default text-color" dnd-draggable [dragEnabled]="product.quantity>0" [dragData]="product" (onDragSuccess)="orderedProduct($event)" [dropZones]="['demo1']">
+                        <div class="card-body">
+                            <div [hidden]="product.quantity===0">{{product.name}} - ${{product.cost}}
+                                <br>(available: {{product.quantity}})</div>
+                            <div [hidden]="product.quantity>0">
+                                <del>{{product.name}}</del>
+                                <br>(NOT available)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div dnd-droppable (onDropSuccess)="addToBasket($event)" [dropZones]="['demo1']" class="card">
+                <div class="card-header">Shopping Basket
+                    <div class="float-right">
+                        <button class="btn btn-secondary btn-sm" (click)="resetBasket()"><em class="far fa-trash-alt"></em></button>
+                    </div>
+                    <br>(to pay: ${{ totalCost() }})</div>
+                <div class="card-body">
+                    <p [hidden]="!shoppingBasket.length">Drag some items here..</p>
+                    <div *ngFor="let product of shoppingBasket" class="card card-default">
+                        <div class="card-body">
+                            {{product.name}}
+                            <br>(ordered: {{product.quantity}}
+                            <br>cost: ${{product.cost * product.quantity}})
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,166 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "6578a9e8-776a-4128-b3db-526d89ab8700"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ng2angle": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "chart.js"
+            ],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/app/core/preloader/preloader.scss",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/app/core/preloader/preloader.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/flot/jquery.flot.js",
+              "node_modules/jquery.flot.tooltip/js/jquery.flot.tooltip.js",
+              "node_modules/flot/jquery.flot.resize.js",
+              "node_modules/flot/jquery.flot.pie.js",
+              "node_modules/flot/jquery.flot.time.js",
+              "node_modules/flot/jquery.flot.categories.js",
+              "node_modules/jquery.flot.spline/jquery.flot.spline.js",
+              "node_modules/jquery-sparkline/jquery.sparkline.js",
+              "node_modules/chart.js/dist/Chart.bundle.js",
+              "node_modules/jqcloud2/dist/jqcloud.js",
+              "node_modules/bootstrap/js/dist/util.js",
+              "node_modules/bootstrap/js/dist/modal.js",
+              "node_modules/bootstrap/js/dist/dropdown.js",
+              "node_modules/bootstrap/js/dist/tooltip.js",
+              "node_modules/summernote/dist/summernote.js",
+              "node_modules/moment/min/moment-with-locales.min.js",
+              "node_modules/ika.jvectormap/jquery-jvectormap-1.2.2.min.js",
+              "node_modules/ika.jvectormap/jquery-jvectormap-world-mill-en.js",
+              "node_modules/ika.jvectormap/jquery-jvectormap-us-mill-en.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "4mb",
+                  "maximumError": "6mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "15kb",
+                  "maximumError": "30kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ng2angle:build:production"
+            },
+            "development": {
+              "browserTarget": "ng2angle:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng2angle:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/app/core/preloader/preloader.scss",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "src/app/core/preloader/preloader.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/flot/jquery.flot.js",
+              "node_modules/jquery.flot.tooltip/js/jquery.flot.tooltip.js",
+              "node_modules/flot/jquery.flot.resize.js",
+              "node_modules/flot/jquery.flot.pie.js",
+              "node_modules/flot/jquery.flot.time.js",
+              "node_modules/flot/jquery.flot.categories.js",
+              "node_modules/jquery.flot.spline/jquery.flot.spline.js",
+              "node_modules/jquery-sparkline/jquery.sparkline.js",
+              "node_modules/chart.js/dist/Chart.bundle.js",
+              "node_modules/jqcloud2/dist/jqcloud.js",
+              "node_modules/bootstrap/js/dist/util.js",
+              "node_modules/bootstrap/js/dist/modal.js",
+              "node_modules/bootstrap/js/dist/dropdown.js",
+              "node_modules/bootstrap/js/dist/tooltip.js",
+              "node_modules/summernote/dist/summernote.js",
+              "node_modules/moment/min/moment-with-locales.min.js",
+              "node_modules/ika.jvectormap/jquery-jvectormap-1.2.2.min.js",
+              "node_modules/ika.jvectormap/jquery-jvectormap-world-mill-en.js",
+              "node_modules/ika.jvectormap/jquery-jvectormap-us-mill-en.js"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng2angle"
+}

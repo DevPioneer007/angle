@@ -1,0 +1,46 @@
+<div class="content-heading">MailBox</div>
+<div class="row">
+    <div class="col-xl-3 col-lg-4">
+        <div class="d-flex mb-2" *ngIf="!routeIsActive('/extras/mailbox/compose')">
+            <a class="btn btn-purple btn-sm mb-compose-button" [routerLink]="'/extras/mailbox/compose'">
+                <em class="fas fa-pencil-alt mr-1"></em>
+                <span>Compose</span>
+            </a>
+            <button class="btn btn-sm btn-secondary mb-toggle-button ml-auto" type="button" (click)="mailboxMenuCollapsed = !mailboxMenuCollapsed">
+                <em class="fa fa-bars fa-fw fa-lg"></em>
+            </button>
+        </div>
+        <!-- START mailbox list-->
+        <div class="mb-boxes" [hidden]="mailboxMenuCollapsed">
+            <div class="card card-default">
+                <div class="card-body">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item p-2">
+                            <small class="text-muted">MAILBOXES</small>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active" *ngFor="let fold of folders">
+                            <a class="nav-link d-flex align-items-center" [routerLink]="['/extras/mailbox/folder', fold.folder]">
+                                <em class="fa-fw fa-lg mr-2" [ngClass]="fold.icon"></em>
+                                <span>{{fold.name}}</span>
+                                <span class="badge badge-green ml-auto" *ngIf="fold.alert">{{fold.alert}}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <small class="text-muted">LABELS</small>
+                        </li>
+                        <li class="nav-item" *ngFor="let labl of labels">
+                            <a class="py-1 nav-link" href="#">
+                                <span class="circle" [ngClass]="'bg-' + labl.color"></span>
+                                <span>{{labl.name}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END mailbox list-->
+    </div>
+    <div class="col-xl-9 col-lg-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

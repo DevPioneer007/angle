@@ -1,0 +1,160 @@
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card card-default">
+            <div class="card-body text-center">
+                <div class="py-4">
+                    <img class="img-fluid rounded-circle img-thumbnail thumb96" src="assets/img/user/02.jpg" alt="Contact" />
+                </div>
+                <h3 class="m-0 text-bold">Audrey Hunt</h3>
+                <div class="my-3">
+                    <p>Hello, I'm a just a dummy contact in your contact list and this is my presentation text. Have fun!</p>
+                </div>
+                <div class="text-center">
+                    <a class="btn btn-primary" href="#">Send message</a>
+                </div>
+            </div>
+        </div>
+        <div class="card card-default d-none d-lg-block">
+            <div class="card-header">
+                <div class="card-title text-center">Recent contacts</div>
+            </div>
+            <div class="card-body">
+                <div class="media">
+                    <img class="align-self-center mr-2 rounded-circle img-thumbnail thumb48" src="assets/img/user/04.jpg" alt="Contact" />
+                    <div class="media-body py-2">
+                        <div class="text-bold">Floyd Ortiz
+                            <div class="text-sm text-muted">12m ago</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <img class="align-self-center mr-2 rounded-circle img-thumbnail thumb48" src="assets/img/user/05.jpg" alt="Contact" />
+                    <div class="media-body py-2">
+                        <div class="text-bold">Luis Vasquez
+                            <div class="text-sm text-muted">2h ago</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <img class="align-self-center mr-2 rounded-circle img-thumbnail thumb48" src="assets/img/user/06.jpg" alt="Contact" />
+                    <div class="media-body py-2">
+                        <div class="text-bold">Duane Mckinney
+                            <div class="text-sm text-muted">yesterday</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <img class="align-self-center mr-2 rounded-circle img-thumbnail thumb48" src="assets/img/user/07.jpg" alt="Contact" />
+                    <div class="media-body py-2">
+                        <div class="text-bold">Connie Lambert
+                            <div class="text-sm text-muted">2 weeks ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card card-default">
+            <div class="card-header d-flex align-items-center">
+                <div class="d-flex justify-content-center col">
+                    <div class="h4 m-0 text-center">Contact Information</div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <div class="btn-group" dropdown>
+                        <button class="btn btn-link" dropdownToggle>
+                            <em class="fa fa-ellipsis-v fa-lg text-muted"></em>
+                        </button>
+                        <ul *dropdownMenu class="dropdown-menu dropdown-menu-right-forced animated fadeInLeft" role="menu">
+                            <a class="dropdown-item" href="#">
+                                <span>Send by message</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <span>Share contact</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <span>Block contact</span>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <span class="text-warning">Delete contact</span>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row py-4 justify-content-center">
+                    <div class="col-12 col-sm-10">
+                        <form class="form-horizontal">
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact1">Name</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" id="inputContact1" type="text" placeholder="" value="Audrey Hunt" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact2">Email</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" id="inputContact2" type="email" value="mail@example.com" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact3">Phone</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" id="inputContact3" type="text" value="(123) 465 789" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact4">Mobile</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" id="inputContact4" type="text" value="(12) 123 987 465" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact5">Website</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" id="inputContact5" type="text" value="http://some.wesbite.com" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact6">Address</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <textarea class="form-control" id="inputContact6" row="4">Some nice Street, 1234</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact7">Social</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" id="inputContact7" type="text" value="@Social" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="text-bold col-xl-2 col-md-3 col-4 col-form-label text-right" for="inputContact8">Company</label>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <input class="form-control" id="inputContact8" type="text" placeholder="No Company" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-xl-2 col-md-3 col-4"></div>
+                                <div class="col-xl-10 col-md-9 col-8">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" id="customCheck1" type="checkbox" />
+                                        <label class="custom-control-label" for="customCheck1">Favorite contact?</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-10">
+                                    <button class="btn btn-info" type="submit">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="text-right">
+                            <a class="text-muted" href="#">Delete this contact?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

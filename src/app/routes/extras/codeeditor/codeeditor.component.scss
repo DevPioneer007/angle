@@ -1,0 +1,37 @@
+@import "../../../shared/styles/bootstrap/_functions.scss";
+@import "../../../shared/styles/bootstrap/_variables.scss";
+@import "../../../shared/styles/bootstrap/_mixins";
+@import '../../../shared/styles/app/variables.scss';
+
+@import '~@circlon/angular-tree-component/css/angular-tree-component.css';
+
+.code-editor {
+    position: relative;
+    bottom: -1px;
+    height: 100%;
+
+    .code-editor-files {
+        width: 100%;
+        height: 30%;
+        @include media-breakpoint-up(sm) {
+            width: 240px;
+            height: 100%;
+        }
+    }
+
+    .code-editor-area {
+        height: 70%;
+        @include media-breakpoint-up(sm) {
+            height: 100%;
+        }
+    }
+
+    .code-editor-area-editor,
+    .code-editor-files-tree {
+        overflow: auto;
+    }
+
+    .CodeMirror {
+        height: 100%;
+    }
+}

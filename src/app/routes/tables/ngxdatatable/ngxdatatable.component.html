@@ -1,0 +1,154 @@
+<div class="content-heading">
+    <div>NgxDatatable
+        <small>A feature-rich yet lightweight data-table crafted for Angular4 and beyond!</small></div>
+</div>
+<div class="card card-default">
+    <div class="card-header">
+        <div class="card-title">Inline Editing</div>
+        <small>Double click on cell to show edition mode</small>
+    </div>
+    <div class="card-body">
+        <ngx-datatable #mydatatable class="bootstrap" [headerHeight]="50" [limit]="5" [columnMode]="ColumnMode.force" [footerHeight]="50" [rowHeight]="'auto'" [rows]="rows">
+            <ngx-datatable-column name="Name">
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+                    <span title="Double click to edit" (dblclick)="editing[rowIndex + '-name'] = true" *ngIf="!editing[rowIndex + '-name']">
+                          {{value}}
+                        </span>
+                    <input autofocus (blur)="updateValue($event, 'name', rowIndex)" *ngIf="editing[rowIndex+ '-name']" type="text" [value]="value" />
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Gender">
+                <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+                    <span title="Double click to edit" (dblclick)="editing[rowIndex + '-gender'] = true" *ngIf="!editing[rowIndex + '-gender']">
+                          {{value}}
+                        </span>
+                    <select *ngIf="editing[rowIndex + '-gender']" (change)="updateValue($event, 'gender', rowIndex)" [value]="value">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Age">
+                <ng-template ngx-datatable-cell-template let-value="value">
+                    {{value}}
+                </ng-template>
+            </ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>
+<div class="card card-default">
+    <div class="card-header">
+        <div class="card-title">Client-side Search and Filtering</div>
+    </div>
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-lg-4">
+                <input type='text' class="form-control" placeholder='Type to filter the name column...' (keyup)='updateFilter($event)' />
+            </div>
+        </div>
+        <ngx-datatable #table class='bootstrap no-detail-row' [columns]="columns" [columnMode]="ColumnMode.force" [footerHeight]="50" [rowHeight]="'auto'" [limit]="10" [rows]='rowsFilter'>
+            <ngx-datatable-column name="Name" [width]="300"></ngx-datatable-column>
+            <ngx-datatable-column name="Gender"></ngx-datatable-column>
+            <ngx-datatable-column name="Age"></ngx-datatable-column>
+            <ngx-datatable-column name="Company" [width]="300"></ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>
+<div class="card card-default">
+    <div class="card-header">
+        <div class="card-title">Horizontal and Vertical Scrolling</div>
+    </div>
+    <div class="card-body">
+        <ngx-datatable #tableScroll class="bootstrap no-detail-row" [rows]="rows" [columnMode]="ColumnMode.force" [headerHeight]="50" [footerHeight]="0" [rowHeight]="40" [scrollbarV]="true" [scrollbarH]="true">
+            <ngx-datatable-column name="Name" [width]="300"></ngx-datatable-column>
+            <ngx-datatable-column name="Gender"></ngx-datatable-column>
+            <ngx-datatable-column name="Age"></ngx-datatable-column>
+            <ngx-datatable-column name="Company" [width]="300"></ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>
+<div class="card card-default">
+    <div class="card-header">
+        <div class="float-right">
+            <small>
+                      <button type="button" class="btn btn-secondary btn-sm" (click)="tableExp.rowDetail.expandAllRows()">Expand All</button>
+                      <button type="button" class="btn btn-secondary btn-sm" (click)="tableExp.rowDetail.collapseAllRows()">Collapse All</button>
+                    </small>
+        </div>
+        <div class="card-title">Expand Row Detail</div>
+    </div>
+    <div class="card-body">
+        <ngx-datatable #myTable class='bootstrap expandable' [columnMode]="ColumnMode.force" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50" [scrollbarV]="true" [rows]='rowsExp' (page)="onPage($event)">
+            <!-- Row Detail Template -->
+            <ngx-datatable-row-detail [rowHeight]="60" #myDetailRow (toggle)="onDetailToggle($event)">
+                <ng-template let-row="row" ngx-datatable-row-detail-template>
+                    <div style="padding-left:35px;">
+                        <div><strong>Company</strong></div>
+                        <div>{{row.company}}</div>
+                    </div>
+                </ng-template>
+            </ngx-datatable-row-detail>
+            <!-- Column Templates -->
+            <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <a [class.datatable-icon-right]="!row.$$expanded" [class.datatable-icon-down]="row.$$expanded" title="Expand/Collapse Row" (click)="toggleExpandRow(row)">
+                        </a>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Index" [width]="80">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <strong>{{row.$$index}}</strong>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Expanded" [width]="80">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                    <strong>{{row.$$expanded === 1}}</strong>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Name" [width]="200">
+                <ng-template let-value="value" ngx-datatable-cell-template>
+                    <strong>{{value}}</strong>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Gender" [width]="300">
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                    <i [innerHTML]="row['name']"></i> and <i>{{value}}</i>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Age"></ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+</div>
+<div class="card card-default">
+    <div class="card-header">
+        <div class="card-title">Client-side Sorting</div>
+    </div>
+    <div class="card-body">
+        <ngx-datatable class="bootstrap" [rows]="rowsSort" [columns]="columnsSort" [sortType]="SortType.multi" [columnMode]="ColumnMode.force" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50" [scrollbarV]="true">
+        </ngx-datatable>
+    </div>
+</div>
+<div class="card card-default">
+    <div class="card-header">
+        <div class="card-title">Row Selection</div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-8">
+                <ngx-datatable class="bootstrap" [rows]="rowsSel" [columnMode]="ColumnMode.force" [columns]="columns" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [limit]="15" [selected]="selected" [selectionType]="SelectionType.multi" (activate)="onActivate($event)" (select)='onSelect($event)'>
+                </ngx-datatable>
+            </div>
+            <div class="col-lg-4">
+                <div class='selected-column'>
+                    <h4>Selections</h4>
+                    <ul>
+                        <li *ngFor='let sel of selected'>
+                            {{sel.name}}
+                        </li>
+                        <li *ngIf="!selected.length">No Selections</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

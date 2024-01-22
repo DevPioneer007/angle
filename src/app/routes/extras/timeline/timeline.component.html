@@ -1,0 +1,161 @@
+<div class="content-heading">
+    Timeline
+    <div class="ml-auto">
+        <div class="d-flex align-items-center">
+            <small class="mr-2">Single column</small>
+            <label class="switch m-0">
+                <input type="checkbox" checked="checked" [(ngModel)]="timelineAlt" />
+                <span></span>
+            </label>
+        </div>
+    </div>
+</div>
+<!-- START timeline-->
+<ul [ngClass]="timelineAlt ? 'timeline-alt' : 'timeline'">
+    <li class="timeline-separator" data-datetime="Now"></li>
+    <!-- START timeline item-->
+    <li>
+        <div class="timeline-badge primary">
+            <em class="fa fa-users"></em>
+        </div>
+        <div class="timeline-card">
+            <div class="popover left">
+                <h4 class="popover-header">Client Meeting</h4>
+                <div class="arrow"></div>
+                <div class="popover-body">
+                    <p>Av 123 St - Floor 2
+                        <br/>
+                        <small>Pellentesque ut diam velit, eget porttitor risus. Nullam posuere euismod volutpat.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    <!-- START timeline item-->
+    <li class="timeline-inverted">
+        <div class="timeline-badge warning">
+            <em class="fa fa-phone"></em>
+        </div>
+        <div class="timeline-card">
+            <div class="popover right">
+                <h4 class="popover-header">Call</h4>
+                <div class="arrow"></div>
+                <div class="popover-body">
+                    <p>Michael
+                        <a href="tel:+011654524578">(+011) 6545 24578 ext. 132</a>
+                        <br/>
+                        <small>Pellentesque ut diam velit, eget porttitor risus. Nullam posuere euismod volutpat.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    <!-- START timeline separator-->
+    <li class="timeline-separator" data-datetime="Yesterday"></li>
+    <!-- END timeline separator-->
+    <!-- START timeline item-->
+    <li>
+        <div class="timeline-badge danger">
+            <em class="fas fa-video"></em>
+        </div>
+        <div class="timeline-card">
+            <div class="popover left">
+                <h4 class="popover-header">Conference</h4>
+                <div class="arrow"></div>
+                <div class="popover-body">
+                    <p>Join development group</p>
+                    <small>
+                        <a href="skype:echo123?call">
+                            <em class="fa fa-phone mr-2"></em>Call the Skype Echo</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    <!-- START timeline item-->
+    <li class="timeline-inverted">
+        <div class="timeline-card">
+            <div class="popover right">
+                <h4 class="popover-header">Appointment</h4>
+                <div class="arrow"></div>
+                <div class="popover-body">
+                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam.</p>
+                    <div class="btn-group" dropdown>
+                        <a dropdownToggle class="dropdown-toggle" href="#">
+                            <em class="fa fa-paperclip"></em>
+                        </a>
+                        <ul *dropdownMenu class="dropdown-menu text-left">
+                            <a class="dropdown-item" href="#">
+                                <em class="fa fa-download mr-2"></em>Download</a>
+                            <a class="dropdown-item" href="#">
+                                <em class="fa fa-share mr-2"></em>Send to</a>
+                            <li class="divider"></li>
+                            <a class="dropdown-item" href="#">
+                                <em class="fa fa-times mr-2"></em>Delete</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    <!-- START timeline item-->
+    <li>
+        <div class="timeline-badge info">
+            <em class="fa fa-plane"></em>
+        </div>
+        <div class="timeline-card">
+            <div class="popover left">
+                <h4 class="popover-header">Fly</h4>
+                <div class="arrow"></div>
+                <div class="popover-body">
+                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    <!-- START timeline item-->
+    <li>
+        <div class="timeline-card">
+            <div class="popover left">
+                <h4 class="popover-header">Appointment</h4>
+                <div class="arrow"></div>
+                <div class="popover-body">
+                    <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    <!-- START timeline separator-->
+    <li class="timeline-separator" data-datetime="2014-05-21"></li>
+    <!-- END timeline separator-->
+    <!-- START timeline item-->
+    <li class="timeline-inverted">
+        <div class="timeline-badge success">
+            <em class="fa fa-music"></em>
+        </div>
+        <div class="timeline-card">
+            <div class="popover right">
+                <h4 class="popover-header">Relax</h4>
+                <div class="arrow"></div>
+                <div class="popover-body">
+                    <p>Listen some music</p>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- END timeline item-->
+    <!-- START timeline item-->
+    <li class="timeline-end">
+        <a class="timeline-badge" href="#">
+            <em class="fa fa-plus"></em>
+        </a>
+    </li>
+    <!-- END timeline item-->
+</ul>
+<!-- END timeline-->

@@ -1,0 +1,63 @@
+<div class="content-heading">
+    <div>Google Maps
+        <small>This directive allows you to add Google Maps Javascript API elements.</small></div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card card-default">
+                <div class="card-header">Classic Map</div>
+                <div class="card-body">
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [scrollwheel]="scrollwheel" class="gmap">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card card-default">
+                <div class="card-header">Custom zoom</div>
+                <div class="card-body">
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="19" [scrollwheel]="scrollwheel" class="gmap">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card card-default">
+                <div class="card-header">Different Map Type (not supported yet)</div>
+                <div class="card-body">
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [scrollwheel]="scrollwheel" class="gmap">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card card-default">
+                <div class="card-header">Multiple Markers</div>
+                <div class="card-body">
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [scrollwheel]="scrollwheel" class="gmap">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                        <agm-marker [latitude]="33.787453" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card card-default">
+                <div class="card-header">Styled Maps</div>
+                <div class="card-body">
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [scrollwheel]="scrollwheel" [styles]="mapStyles" class="gmap">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

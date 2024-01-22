@@ -1,0 +1,57 @@
+<div class="content-heading">
+    <div>
+        Angular Tree
+        <small>A simple yet powerful tree component for Angular</small>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-4 col-md-6 col-xl-push-3 col-md-push-6">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <input class="form-control" #filter (keyup)="filterNodes(filter.value, tree)" placeholder="filter nodes" />
+                    </form>
+                    <tree-root #tree [nodes]="nodes" [focused]="true" [options]="customTemplateStringOptions" (onEvent)="onEvent($event)">
+                        <ng-template #treeNodeTemplate let-node>
+                            <span title="{{node.data.subTitle}}">{{ node.data.name }}</span>
+                            <span class="float-right">{{ childrenCount(node) }}</span>
+                            <button class="btn btn-secondary btn-xs" (click)="go($event)"><em class="fa fa-exclamation text-muted"></em></button>
+                        </ng-template>
+                        <ng-template #loadingTemplate>Loading, please hold....</ng-template>
+                    </tree-root>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 col-xl-pull-4 col-md-pull-6">
+            <h5>Tree Control API:</h5>
+            <div class="btn-group btn-group-justified mb">
+                <a class="btn btn-secondary" (click)="tree.treeModel.focusNextNode()">next node</a>
+                <a class="btn btn-secondary" (click)="tree.treeModel.focusPreviousNode()">previous node</a>
+            </div>
+            <div class="btn-group btn-group-justified mb">
+                <a class="btn btn-secondary" (click)="tree.treeModel.focusDrillDown()">drill down</a>
+                <a class="btn btn-secondary" (click)="tree.treeModel.focusDrillUp()">drill up</a>
+            </div>
+            <div class="btn-group btn-group-justified mb">
+                <a class="btn btn-secondary" [class.disabled]="!tree.treeModel.getFocusedNode()" (click)="tree.treeModel.getFocusedNode().toggleActivated()">
+                    {{ tree.treeModel.getFocusedNode()?.isActive ? 'deactivate' : 'activate' }}
+                </a>
+                <a class="btn btn-secondary" [class.disabled]="!tree.treeModel.getFocusedNode()" (click)="tree.treeModel.getFocusedNode().toggleExpanded()">
+                    {{ tree.treeModel.getFocusedNode()?.isExpanded ? 'collapse' : 'expand' }}
+                </a>
+            </div>
+            <div class="btn-group btn-group-justified mb">
+                <a class="btn btn-secondary" [class.disabled]="!tree.treeModel.getFocusedNode()" (click)="tree.treeModel.getFocusedNode().blur()">
+                    blur
+                </a>
+                <a class="btn btn-secondary" (click)="addNode(tree)">
+                    Add Node
+                </a>
+            </div>
+            <a class="btn btn-secondary btn-block" (click)="activateSubSub(tree)">
+                Activate inner node
+            </a>
+        </div>
+    </div>
+</div>

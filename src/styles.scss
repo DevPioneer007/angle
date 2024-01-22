@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+//== Vendor
+@import '~@fortawesome/fontawesome-free/css/brands.css';
+@import '~@fortawesome/fontawesome-free/css/regular.css';
+@import '~@fortawesome/fontawesome-free/css/solid.css';
+@import '~@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '~simple-line-icons/css/simple-line-icons.css';
+@import '~weather-icons/css/weather-icons.css';
+@import '~weather-icons/css/weather-icons-wind.css';
+
+@import '~spinkit/css/spinkit.css';
+@import '~loaders.css/loaders.css';
+
+@import '~ngx-toastr/toastr.css';
+
+@import '~ng2-dnd/bundles/style.css';
+
+@import '~ag-grid-community/dist/styles/ag-grid.css';
+@import '~ag-grid-community/dist/styles/ag-theme-fresh.css';
+
+@import '~ika.jvectormap/jquery-jvectormap-1.2.2.css';
+
+@import '~jqcloud2/dist/jqcloud.css';
+
+@import '~summernote/dist/summernote.css';
+
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+@import '~@fullcalendar/list/main.css';
+@import '~@fullcalendar/bootstrap/main.css';
+
+@import '~codemirror/lib/codemirror.css';
+
+//== Bootstrap
+@import "./app/shared/styles/bootstrap.scss";
+//== Application
+@import "./app/shared/styles/app.scss";

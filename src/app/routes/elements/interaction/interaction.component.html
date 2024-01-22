@@ -1,0 +1,67 @@
+<div class="content-heading">
+    <div>
+        Interaction
+        <small>Advanced bootstrap components for user interaction</small>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-6 mb-5">
+        <h3 class="page-header mt-0">Typeahead</h3>
+        <div class="typeahead-ctrl">
+            <!-- Static arrays -->
+            <h4>Static arrays</h4>
+            <pre class="card card-block card-header">Model: {{selected | json}}</pre>
+            <input [(ngModel)]="selected" [typeahead]="states" (typeaheadOnSelect)="typeaheadOnSelect($event)" class="form-control">
+            <!-- Custom item template -->
+            <ng-template #customItemTemplate let-model="item" let-index="index">
+                <span>This is: {{model | json}} Index: {{ index }}</span>
+            </ng-template>
+            <h4 class="mt-3">Custom item template</h4>
+            <pre class="card card-block card-header">Model: {{customSelected | json}}</pre>
+            <input [(ngModel)]="customSelected" [typeahead]="statesComplex" [typeaheadItemTemplate]="customItemTemplate" [typeaheadOptionField]="'name'" (typeaheadOnSelect)="typeaheadOnSelect($event)" class="form-control">
+            <!-- Asynchronous results -->
+            <h4 class="mt-3">Asynchronous results</h4>
+            <pre class="card card-block card-header">Model: {{asyncSelected | json}}</pre>
+            <input [(ngModel)]="asyncSelected" [typeahead]="dataSource" (typeaheadLoading)="changeTypeaheadLoading($event)" (typeaheadNoResults)="changeTypeaheadNoResults($event)" (typeaheadOnSelect)="typeaheadOnSelect($event)" [typeaheadOptionsLimit]="7" [typeaheadOptionField]="'name'" placeholder="Locations loaded with timeout" class="form-control">
+            <div *ngIf="typeaheadLoading===true">
+                <i class="fas fa-sync" style=""></i>
+            </div>
+            <div *ngIf="typeaheadNoResults===true" class="" style="">
+                <i class="fa fa-times"></i> No Results Found
+            </div>
+            <!--Typeahead inside a form-->
+            <h4 class="mt-3">Typeahead inside a form</h4>
+            <pre class="card card-block card-header">Model: {{myForm.value.state | json}}</pre>
+            <form [formGroup]="myForm">
+                <input formControlName="state" [typeahead]="states" (typeaheadOnSelect)="typeaheadOnSelect($event)" [typeaheadOptionsLimit]="7" [typeaheadOptionField]="'name'" [typeaheadMinLength]="0" placeholder="Typeahead inside a form" class="form-control">
+            </form>
+        </div>
+
+    </div>
+    <div class="col-xl-6">
+        <h3 class="page-header mt-0">Carousel</h3>
+        <div>
+            <carousel [interval]="myInterval" [noWrap]="false">
+                <slide *ngFor="let slidez of slides; let index=index" [active]="slidez.active">
+                    <img [src]="slidez.image" class="img-fluid">
+                    <div class="carousel-caption">
+                        <h4>Slide {{index}}</h4>
+                        <p>{{slidez.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+        <div class="row mt-3">
+            <div class="col-xl-6">
+                <p>Interval, in milliseconds:</p>
+                <input class="form-control" type="number" [(ngModel)]="myInterval" />
+            </div>
+            <div class="col-xl-6">
+                <p>Add a slide with a random image</p>
+                <button class="btn btn-info" type="button" (click)="addSlide()">Add Slide</button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,213 @@
+<div class="content-heading">Grid</div>
+<div class="container-fluid grid-example">
+   <p>Bootstrap includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It's based on a 12 column layout and has multiple tiers, one for each media query range. You can use it with Sass mixins or our predefined
+      classes.</p>
+   <div class="card mb-3">
+      <div class="card-header">Auto-layout columns</div>
+      <div class="card-body">
+         <p class="my-4 text-bold" id="equal-width">Equal-width</p>
+         <div class="container">
+            <div class="row">
+               <div class="col">1 of 2</div>
+               <div class="col">1 of 2</div>
+            </div>
+            <div class="row">
+               <div class="col">1 of 3</div>
+               <div class="col">1 of 3</div>
+               <div class="col">1 of 3</div>
+            </div>
+         </div>
+         <p class="my-4 text-bold" id="setting-one-column-width">Setting one column width</p>
+         <div class="container">
+            <div class="row">
+               <div class="col">1 of 3</div>
+               <div class="col-6">2 of 3 (wider)</div>
+               <div class="col">3 of 3</div>
+            </div>
+            <div class="row">
+               <div class="col">1 of 3</div>
+               <div class="col-5">2 of 3 (wider)</div>
+               <div class="col">3 of 3</div>
+            </div>
+         </div>
+         <p class="my-4 text-bold" id="variable-width-content">Variable width content</p>
+         <div class="container">
+            <div class="row justify-content-md-center">
+               <div class="col col-xl-2">1 of 3</div>
+               <div class="col-12 col-xl-auto">Variable width content</div>
+               <div class="col col-xl-2">3 of 3</div>
+            </div>
+            <div class="row">
+               <div class="col">1 of 3</div>
+               <div class="col-12 col-xl-auto">Variable width content</div>
+               <div class="col col-xl-2">3 of 3</div>
+            </div>
+         </div>
+         <p class="my-4 text-bold" id="equal-width-multi-row">Equal-width multi-row</p>
+         <div class="row">
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="w-100"></div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+         </div>
+      </div>
+   </div>
+   <div class="card mb-3">
+      <div class="card-header">Responsive classes</div>
+      <div class="card-body">
+         <p class="my-4 text-bold" id="all-breakpoints">All breakpoints</p>
+         <div class="row">
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+            <div class="col">col</div>
+         </div>
+         <div class="row">
+            <div class="col-8">col-8</div>
+            <div class="col-4">col-4</div>
+         </div>
+         <p class="my-4 text-bold" id="stacked-to-horizontal">Stacked to horizontal</p>
+         <div class="row">
+            <div class="col-md-8">col-sm-8</div>
+            <div class="col-md-4">col-sm-4</div>
+         </div>
+         <div class="row">
+            <div class="col-md">col-sm</div>
+            <div class="col-md">col-sm</div>
+            <div class="col-md">col-sm</div>
+         </div>
+         <p class="my-4 text-bold" id="mix-and-match">Mix and match</p>
+         <!-- Stack the columns on mobile by making one full-width and the other half-width-->
+         <div class="row">
+            <div class="col col-xl-8">.col .col-xl-8</div>
+            <div class="col-6 col-xl-4">.col-6 .col-xl-4</div>
+         </div>
+         <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop-->
+         <div class="row">
+            <div class="col-6 col-xl-4">.col-6 .col-xl-4</div>
+            <div class="col-6 col-xl-4">.col-6 .col-xl-4</div>
+            <div class="col-6 col-xl-4">.col-6 .col-xl-4</div>
+         </div>
+         <!-- Columns are always 50% wide, on mobile and desktop-->
+         <div class="row">
+            <div class="col-6">.col-6</div>
+            <div class="col-6">.col-6</div>
+         </div>
+      </div>
+   </div>
+   <div class="card mb-3">
+      <div class="card-header">Alignment</div>
+      <div class="card-body">
+         <p class="my-4 text-bold" id="vertical-alignment">Vertical alignment</p>
+         <div class="container">
+            <div class="row align-items-start">
+               <div class="col">One of three columns</div>
+               <div class="col">One of three columns</div>
+               <div class="col">One of three columns</div>
+            </div>
+            <div class="row align-items-center">
+               <div class="col">One of three columns</div>
+               <div class="col">One of three columns</div>
+               <div class="col">One of three columns</div>
+            </div>
+            <div class="row align-items-end">
+               <div class="col">One of three columns</div>
+               <div class="col">One of three columns</div>
+               <div class="col">One of three columns</div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col align-self-start">One of three columns</div>
+               <div class="col align-self-center">One of three columns</div>
+               <div class="col align-self-end">One of three columns</div>
+            </div>
+         </div>
+         <p class="my-4 text-bold" id="horizontal-alignment">Horizontal alignment</p>
+         <div class="container">
+            <div class="row justify-content-start">
+               <div class="col-4">One of two columns</div>
+               <div class="col-4">One of two columns</div>
+            </div>
+            <div class="row justify-content-center">
+               <div class="col-4">One of two columns</div>
+               <div class="col-4">One of two columns</div>
+            </div>
+            <div class="row justify-content-end">
+               <div class="col-4">One of two columns</div>
+               <div class="col-4">One of two columns</div>
+            </div>
+            <div class="row justify-content-around">
+               <div class="col-4">One of two columns</div>
+               <div class="col-4">One of two columns</div>
+            </div>
+            <div class="row justify-content-between">
+               <div class="col-4">One of two columns</div>
+               <div class="col-4">One of two columns</div>
+            </div>
+         </div>
+         <p class="my-4 text-bold" id="no-gutters">No gutters</p>
+         <div class="row no-gutters">
+            <div class="col-12 col-md-6 col-xl-8">.col-12 .col-md-6 .col-xl-8</div>
+            <div class="col-6 col-xl-4">.col-6 .col-xl-4</div>
+         </div>
+         <p class="my-4 text-bold" id="column-wrapping">Column wrapping</p>
+         <div class="row">
+            <div class="col-9">.col-9</div>
+            <div class="col-4">.col-4
+               <br/>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+            <div class="col-6">.col-6
+               <br/>Subsequent columns continue along the new line.</div>
+         </div>
+         <p class="my-4 text-bold" id="column-resets">Column resets</p>
+         <div class="row">
+            <div class="col-6 col-md-3">.col-6 .col-md-3</div>
+            <div class="col-6 col-md-3">.col-6 .col-md-3</div>
+            <!-- Add the extra clearfix for only the required viewport-->
+            <div class="clearfix d-sm-none"></div>
+            <div class="col-6 col-md-3">.col-6 .col-md-3</div>
+            <div class="col-6 col-md-3">.col-6 .col-md-3</div>
+         </div>
+         <div class="row">
+            <div class="col-md-5 col-xl-6">.col-md-5 .col-xl-6</div>
+            <div class="col-md-5 offset-sm-2 col-xl-6 offset-md-0">.col-md-5 .offset-sm-2 .col-xl-6 .offset-md-0</div>
+         </div>
+         <div class="row">
+            <div class="col-md-6 col-xl-5 col-xl-6">.col.col-md-6.col-xl-5.col-xl-6</div>
+            <div class="col-md-6 col-xl-5 offset-md-2 col-xl-6 offset-lg-0">.col-md-6 .col-xl-5 .offset-md-2 .col-xl-6 .offset-lg-0</div>
+         </div>
+      </div>
+   </div>
+   <div class="card mb-3">
+      <div class="card-header">Reordering</div>
+      <div class="card-body">
+         <p class="my-4 text-bold" id="flex-order">Flex order</p>
+         <p class="my-4 text-bold" id="offsetting-columns">Offsetting columns</p>
+         <div class="row">
+            <div class="col-xl-4">.col-xl-4</div>
+            <div class="col-xl-4 offset-md-4">.col-xl-4 .offset-md-4</div>
+         </div>
+         <div class="row">
+            <div class="col-xl-3 offset-md-3">.col-xl-3 .offset-md-3</div>
+            <div class="col-xl-3 offset-md-3">.col-xl-3 .offset-md-3</div>
+         </div>
+         <div class="row">
+            <div class="col-xl-6 offset-md-3">.col-xl-6 .offset-md-3</div>
+         </div>
+      </div>
+   </div>
+   <div class="card mb-3">
+      <div class="card-header">Nesting</div>
+      <div class="card-body">
+         <div class="row">
+            <div class="col-md-9">Level 1: .col-md-9
+               <div class="row">
+                  <div class="col-8 col-md-6">Level 2: .col-8 .col-md-6</div>
+                  <div class="col-4 col-md-6">Level 2: .col-4 .col-md-6</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

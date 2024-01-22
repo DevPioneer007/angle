@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <div class="abs-center wd-xl">
+        <!-- START card-->
+        <div class="d-flex justify-content-center">
+            <div class="p-2">
+                <img class="img-thumbnail rounded-circle" [src]="settings.getUserSetting('picture')||''" alt="Avatar" width="60" height="60" />
+            </div>
+        </div>
+        <div class="card b0">
+            <div class="card-body">
+                <p class="text-center">Please login to unlock your screen.</p>
+                <form [formGroup]="valForm" role="form" name="lockForm" (submit)="submitForm($event, valForm.value)">
+                    <div class="form-group">
+                        <div class="input-group with-focus">
+                            <input class="form-control border-right-0" id="exampleInputPassword1" type="password" placeholder="Password" name="password" formControlName="password" />
+                            <div class="input-group-append">
+                                <span class="input-group-text text-muted bg-transparent border-left-0">
+                                    <em class="fa fa-lock"></em>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-danger" *ngIf="valForm.controls['password'].hasError('required') && (valForm.controls['password'].dirty || valForm.controls['password'].touched)">This field is required</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="mt-1">
+                            <a class="text-muted" [routerLink]="'/recover'">
+                                <span class="text-sm">Forgot your password?</span>
+                            </a>
+                        </div>
+                        <div class="ml-auto">
+                            <!-- Change this button type to submit to send the form data-->
+                            <button class="btn btn-sm btn-primary" type="submit">Unlock</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END card-->
+        <div class="p-3 text-center">
+            <span>&copy;</span>
+            <span>{{ settings.getAppSetting('year') }}</span>
+            <span class="mx-2">-</span>
+            <span>{{ settings.getAppSetting('name') }}</span>
+            <br/>
+            <span>{{ settings.getAppSetting('description') }}</span>
+        </div>
+    </div>
+</div>

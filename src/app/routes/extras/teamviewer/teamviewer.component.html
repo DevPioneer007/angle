@@ -1,0 +1,473 @@
+<div class="content-heading">
+    Team viewer
+    <div class="ml-auto">
+        <em class="fas fa-exclamation-triangle text-warning"></em>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-4 col-lg-6">
+        <!-- Team card-->
+        <div class="card card-default">
+            <div class="card-header">
+                <div class="float-right">
+                    <div class="badge badge-success">free</div>
+                </div>
+                <div class="card-title">Team #1</div>
+            </div>
+            <div class="card-body bt">
+                <a class="inline" tooltip="Team leader">
+                    <img class="rounded-circle thumb48" src="assets/img/user/03.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/02.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/04.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/05.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/06.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/07.jpg" alt="project member" />
+                </a>
+            </div>
+            <div class="card-body bb text-center">
+                <div tooltip="Progress of asigned tasks">
+                    <progressbar class="progress-xs m-0" [value]="50" type="info"></progressbar>
+                </div>
+            </div>
+            <div class="card-body bb">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <p class="text-bold">BUDGET</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsWarning" values="60,40"></div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">TASKS</p>
+                        <div class="h3 m-0">26</div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">AVAILABITY</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsWarning" values="70,30"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">angularjs</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">jquery</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">gulp</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">git</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">ios</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-secondary btn-oval">Manage Team</a>
+            </div>
+        </div>
+        <!-- end Team card-->
+    </div>
+    <div class="col-xl-4 col-lg-6">
+        <!-- Team card-->
+        <div class="card card-default">
+            <div class="card-header">
+                <div class="float-right">
+                    <div class="badge bg-gray">asigned</div>
+                </div>
+                <div class="card-title">Team #2</div>
+            </div>
+            <div class="card-body bt">
+                <a class="inline" tooltip="Team leader">
+                    <img class="rounded-circle thumb48" src="assets/img/user/03.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/02.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/04.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/05.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/09.jpg" alt="project member" />
+                </a>
+            </div>
+            <div class="card-body bb text-center">
+                <div tooltip="Progress of asigned tasks">
+                    <progressbar class="progress-xs m-0" [value]="90" type="info"></progressbar>
+                </div>
+            </div>
+            <div class="card-body bb">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <p class="text-bold">BUDGET</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsDanger" values="10,90"></div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">TASKS</p>
+                        <div class="h3 m-0">145</div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">AVAILABITY</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsSuccess" values="40,60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">angularjs</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">jquery</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">gulp</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">git</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">ios</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-secondary btn-oval">Manage Team</a>
+            </div>
+        </div>
+        <!-- end Team card-->
+    </div>
+    <div class="col-xl-4 col-lg-6">
+        <!-- Team card-->
+        <div class="card card-default">
+            <div class="card-header">
+                <div class="float-right">
+                    <div class="badge badge-success">free</div>
+                </div>
+                <div class="card-title">Team #3</div>
+            </div>
+            <div class="card-body bt">
+                <a class="inline" tooltip="Team leader">
+                    <img class="rounded-circle thumb48" src="assets/img/user/03.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/02.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/04.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/05.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/06.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/07.jpg" alt="project member" />
+                </a>
+            </div>
+            <div class="card-body bb text-center">
+                <div tooltip="Progress of asigned tasks">
+                    <progressbar class="progress-xs m-0" [value]="50" type="info"></progressbar>
+                </div>
+            </div>
+            <div class="card-body bb">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <p class="text-bold">BUDGET</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsWarning" values="60,40"></div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">TASKS</p>
+                        <div class="h3 m-0">98</div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">AVAILABITY</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsSuccess" values="40,60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">angularjs</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">jquery</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">gulp</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">git</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">ios</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-secondary btn-oval">Manage Team</a>
+            </div>
+        </div>
+        <!-- end Team card-->
+    </div>
+    <div class="col-xl-4 col-lg-6">
+        <!-- Team card-->
+        <div class="card card-default">
+            <div class="card-header">
+                <div class="float-right">
+                    <div class="badge bg-gray">asigned</div>
+                </div>
+                <div class="card-title">Team #4</div>
+            </div>
+            <div class="card-body bt">
+                <a class="inline" tooltip="Team leader">
+                    <img class="rounded-circle thumb48" src="assets/img/user/03.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/02.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/04.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/05.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/06.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/07.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/08.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/09.jpg" alt="project member" />
+                </a>
+            </div>
+            <div class="card-body bb text-center">
+                <div tooltip="Progress of asigned tasks">
+                    <progressbar class="progress-xs m-0" [value]="25" type="info"></progressbar>
+                </div>
+            </div>
+            <div class="card-body bb">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <p class="text-bold">BUDGET</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsWarning" values="60,40"></div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">TASKS</p>
+                        <div class="h3 m-0">145</div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">AVAILABITY</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsSuccess" values="40,60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">angularjs</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">jquery</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">gulp</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">git</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">ios</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-secondary btn-oval">Manage Team</a>
+            </div>
+        </div>
+        <!-- end Team card-->
+    </div>
+    <div class="col-xl-4 col-lg-6">
+        <!-- Team card-->
+        <div class="card card-default">
+            <div class="card-header">
+                <div class="float-right">
+                    <div class="badge bg-gray">asigned</div>
+                </div>
+                <div class="card-title">Team #5</div>
+            </div>
+            <div class="card-body bt">
+                <a class="inline" tooltip="Team leader">
+                    <img class="rounded-circle thumb48" src="assets/img/user/03.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/02.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/04.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/05.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/06.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/07.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/08.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/09.jpg" alt="project member" />
+                </a>
+            </div>
+            <div class="card-body bb text-center">
+                <div tooltip="Progress of asigned tasks">
+                    <progressbar class="progress-xs m-0" [value]="50" type="info"></progressbar>
+                </div>
+            </div>
+            <div class="card-body bb">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <p class="text-bold">BUDGET</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsWarning" values="60,40"></div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">TASKS</p>
+                        <div class="h3 m-0">500</div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">AVAILABITY</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsSuccess" values="40,60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">angularjs</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">jquery</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">gulp</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">git</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">ios</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-secondary btn-oval">Manage Team</a>
+            </div>
+        </div>
+        <!-- end Team card-->
+    </div>
+    <div class="col-xl-4 col-lg-6">
+        <!-- Team card-->
+        <div class="card card-default">
+            <div class="card-header">
+                <div class="float-right">
+                    <div class="badge badge-success">free</div>
+                </div>
+                <div class="card-title">Team #6</div>
+            </div>
+            <div class="card-body bt">
+                <a class="inline" tooltip="Team leader">
+                    <img class="rounded-circle thumb48" src="assets/img/user/03.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/02.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/04.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/05.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/06.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/07.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/08.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/09.jpg" alt="project member" />
+                </a>
+            </div>
+            <div class="card-body bb text-center">
+                <div tooltip="Progress of asigned tasks">
+                    <progressbar class="progress-xs m-0" [value]="50" type="info"></progressbar>
+                </div>
+            </div>
+            <div class="card-body bb">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <p class="text-bold">BUDGET</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsDanger" values="5,95"></div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">TASKS</p>
+                        <div class="h3 m-0">145</div>
+                    </div>
+                    <div class="col-4">
+                        <p class="text-bold">AVAILABITY</p>
+                        <div class="sparkline inline mr-2" [sparkline]="sparkOptionsWarning" values="70,30"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">angularjs</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">jquery</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">gulp</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge bg-gray">git</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">ios</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-secondary btn-oval">Manage Team</a>
+            </div>
+        </div>
+        <!-- end Team card-->
+    </div>
+</div>

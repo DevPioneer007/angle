@@ -1,0 +1,379 @@
+<div class="content-heading">
+    <div>
+        Project #1 Management
+        <small>In lacinia tellus vitae nisl consectetur pellentesque.</small>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-8">
+        <!-- Main card-->
+        <div class="card b">
+            <div class="card-header">
+                <div class="float-right mt-2">
+                    <div class="badge badge-info">started</div>
+                </div>
+                <h4 class="my-2">
+                    <span>Project #1</span>
+                </h4>
+            </div>
+            <div class="card-body bb bt">
+                <a class="inline" tooltip="Team leader">
+                    <img class="rounded-circle thumb48" src="assets/img/user/03.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/02.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/04.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/05.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/06.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/07.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/08.jpg" alt="project member" />
+                </a>
+                <a class="inline">
+                    <img class="rounded-circle thumb24" src="assets/img/user/09.jpg" alt="project member" />
+                </a>
+                <div class="float-right mt-2">
+                    <button class="btn btn-secondary" type="button">Add Member</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4>Description</h4>
+                <p>Nam eget risus tellus. Vestibulum pretium mollis ligula, at ultrices quam egestas et. Sed mattis tincidunt ligula, ac porttitor lectus porttitor condimentum. Ut et ligula ante, nec mollis lacus. Aliquam erat volutpat. Aliquam auctor diam ut urna lacinia faucibus. Proin est sapien, convallis non hendrerit nec, laoreet ut ipsum. Aenean vehicula, nulla vel pharetra accumsan, elit risus pretium arcu, nec ultrices urna ligula vel nunc. Cras porttitor orci eget nibh pharetra mollis.</p>
+                <p>Maecenas at porta purus. Ut eu aliquam orci. Praesent in libero at neque gravida venenatis auctor nec arcu.</p>
+                <p class="text-right">
+                    <button class="btn btn-secondary" type="button">View all documents</button>
+                </p>
+            </div>
+            <div class="card-body">
+                <div class="mb-2">
+                    <small class="float-left">Activity over time</small>
+                    <div class="sparkline text-center" [sparkline]="sparkOptionsActivity" values="2,4,5,6,10,7,8,5,7,7,11,8,6,9,11,9,13,14,12,16"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-4">
+                        <div class="inline">
+                            <div class="sparkline" [sparkline]="sparkOptionsInfo" values="20,80"></div>
+                        </div>
+                        <p class="mt-3">Issues</p>
+                    </div>
+                    <div class="col-4">
+                        <div class="inline">
+                            <div class="sparkline" [sparkline]="sparkOptionsSuccess" values="60,40"></div>
+                        </div>
+                        <p class="mt-3">Commits</p>
+                    </div>
+                    <div class="col-4">
+                        <div class="inline">
+                            <div class="sparkline" [sparkline]="sparkOptionsWarning" values="90,10"></div>
+                        </div>
+                        <p class="mt-3">Files</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Main card-->
+        <!-- Team messages-->
+        <div class="card b">
+            <div class="card-header">
+                <div class="px-2 float-right badge badge-danger">5</div>
+                <div class="px-2 mr-2 float-right badge badge-success">12</div>
+                <div class="card-title">Team messages</div>
+            </div>
+            <!-- START list group-->
+            <scrollable class="list-group" height="180">
+                <!-- START list group item-->
+                <div class="list-group-item list-group-item-action">
+                    <div class="media">
+                        <img class="align-self-start mx-2 circle thumb32" src="assets/img/user/02.jpg" alt="Image">
+                        <div class="media-body text-truncate">
+                            <p class="mb-1">
+                                <strong class="text-primary">
+                                    <span class="circle bg-success circle-lg text-left"></span>
+                                    <span>Catherine Ellis</span>
+                                </strong>
+                            </p>
+                            <p class="mb-1 text-sm">Cras sit amet nibh libero, in gravida nulla. Nulla...</p>
+                        </div>
+                        <div class="ml-auto">
+                            <small class="text-muted ml-2">2h</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- END list group item-->
+                <!-- START list group item-->
+                <div class="list-group-item list-group-item-action">
+                    <div class="media">
+                        <img class="align-self-start mx-2 circle thumb32" src="assets/img/user/03.jpg" alt="Image">
+                        <div class="media-body text-truncate">
+                            <p class="mb-1">
+                                <strong class="text-primary">
+                                    <span class="circle bg-success circle-lg text-left"></span>
+                                    <span>Jessica Silva</span>
+                                </strong>
+                            </p>
+                            <p class="mb-1 text-sm">Cras sit amet nibh libero, in gravida nulla. Nulla...</p>
+                        </div>
+                        <div class="ml-auto">
+                            <small class="text-muted ml-2">3h</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- END list group item-->
+                <!-- START list group item-->
+                <div class="list-group-item list-group-item-action">
+                    <div class="media">
+                        <img class="align-self-start mx-2 circle thumb32" src="assets/img/user/09.jpg" alt="Image">
+                        <div class="media-body text-truncate">
+                            <p class="mb-1">
+                                <strong class="text-primary">
+                                    <span class="circle bg-danger circle-lg text-left"></span>
+                                    <span>Jessie Wells</span>
+                                </strong>
+                            </p>
+                            <p class="mb-1 text-sm">Cras sit amet nibh libero, in gravida nulla. Nulla...</p>
+                        </div>
+                        <div class="ml-auto">
+                            <small class="text-muted ml-2">4h</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- END list group item-->
+                <!-- START list group item-->
+                <div class="list-group-item list-group-item-action">
+                    <div class="media">
+                        <img class="align-self-start mx-2 circle thumb32" src="assets/img/user/12.jpg" alt="Image">
+                        <div class="media-body text-truncate">
+                            <p class="mb-1">
+                                <strong class="text-primary">
+                                    <span class="circle bg-danger circle-lg text-left"></span>
+                                    <span>Rosa Burke</span>
+                                </strong>
+                            </p>
+                            <p class="mb-1 text-sm">Cras sit amet nibh libero, in gravida nulla. Nulla...</p>
+                        </div>
+                        <div class="ml-auto">
+                            <small class="text-muted ml-2">1d</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- END list group item-->
+                <!-- START list group item-->
+                <div class="list-group-item list-group-item-action">
+                    <div class="media">
+                        <img class="align-self-start mx-2 circle thumb32" src="assets/img/user/10.jpg" alt="Image">
+                        <div class="media-body text-truncate">
+                            <p class="mb-1">
+                                <strong class="text-primary">
+                                    <span class="circle bg-danger circle-lg text-left"></span>
+                                    <span>Michelle Lane</span>
+                                </strong>
+                            </p>
+                            <p class="mb-1 text-sm">Mauris eleifend, libero nec cursus lacinia...</p>
+                        </div>
+                        <div class="ml-auto">
+                            <small class="text-muted ml-2">2d</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- END list group item-->
+            </scrollable>
+            <!-- END list group-->
+            <!-- START card footer-->
+            <div class="card-footer clearfix">
+                <div class="input-group">
+                    <input class="form-control form-control-sm" type="text" placeholder="Search message .." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary btn-sm" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <!-- END card-footer-->
+        </div>
+        <!-- End Team messages-->
+    </div>
+    <div class="col-xl-4">
+        <!-- Aside card-->
+        <div class="card b">
+            <div class="card-body bb">
+                <div class="clearfix">
+                    <div class="float-left">
+                        <button class="btn btn-secondary btn-oval" type="button">
+                            <em class="fa fa-play fa-fw text-muted"></em>
+                            <span>Start</span>
+                        </button>
+                        <button class="btn btn-secondary btn-oval" type="button">
+                            <em class="fa fa-pause fa-fw text-muted"></em>
+                            <span>Pause</span>
+                        </button>
+                    </div>
+                    <div class="float-right">
+                        <button class="btn btn-danger btn-oval" type="button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body bb">
+                <div class="d-flex align-items-center">
+                    <div class="w-100">
+                        <progressbar class="progress-xs m0" [value]="48" type="info"></progressbar>
+                    </div>
+                    <div class="wd-xxs text-right">
+                        <div class="text-bold text-muted">48%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-inline my-2">
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-warning">priority</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">angularjs</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">jquery</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">gulp</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">git</div>
+                    </li>
+                    <li class="list-inline-item">
+                        <div class="badge p-1 bg-gray">ios</div>
+                    </li>
+                </ul>
+            </div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Start date</strong>
+                        </td>
+                        <td>02/01/2016</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Estimated Hours</strong>
+                        </td>
+                        <td>122hs</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Time Consumed</strong>
+                        </td>
+                        <td>62hs</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Commits</strong>
+                        </td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Issues</strong>
+                        </td>
+                        <td>39</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Files</strong>
+                        </td>
+                        <td>87</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Members</strong>
+                        </td>
+                        <td>
+                            <p>Tara Sanders</p>
+                            <p>Alan Smith</p>
+                            <p>Priscilla Peters</p>
+                            <p>Madison Willis</p>
+                            <p>Lesa Marshall</p>
+                            <p>Kylie Freeman</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Recent files</strong>
+                        </td>
+                        <td>
+                            <scrollable class="list-group" height="120">
+                                <table class="table table-bordered bg-transparent">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <em class="fa-lg far fa-file-code"></em>
+                                            </td>
+                                            <td>
+                                                <a class="text-muted">database.controller.js</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <em class="fa-lg far fa-file-image"></em>
+                                            </td>
+                                            <td>
+                                                <a class="text-muted">baground-lg.png</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <em class="fa-lg far fa-file-code"></em>
+                                            </td>
+                                            <td>
+                                                <a class="text-muted">picture.controller.js</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <em class="fa-lg far fa-file-word"></em>
+                                            </td>
+                                            <td>
+                                                <a class="text-muted">applicat-diagrams.docx</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <em class="fa-lg far fa-file-code"></em>
+                                            </td>
+                                            <td>
+                                                <a class="text-muted">database.controller.js</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <em class="fa-lg far fa-file-code"></em>
+                                            </td>
+                                            <td>
+                                                <a class="text-muted">database.controller.js</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </scrollable>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-right">
+                <a href="" class="btn btn-link">Open repository</a>
+            </p>
+        </div>
+        <!-- end Aside card-->
+    </div>
+</div>
